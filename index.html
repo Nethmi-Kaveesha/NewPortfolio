@@ -74,19 +74,23 @@
 
         }
 
-         .button {
-            background-color:#D6A2E8; /* Blue background */
-            border: none;              /* No border */
-            color: #6D214F;              /* White text */
-            padding: 12px 24px;        /* Padding inside the button */
-            text-align: center;        /* Center text */
-            text-decoration: none;     /* Remove underline */
-            display: inline-block;     /* Inline-block element */
-            font-size: 16px;           /* Font size */
-            margin: 5px 2px;          /* Margin around the button */
-            cursor: pointer;           /* Pointer cursor on hover */
-            border-radius: 5px;        /* Rounded corners */
-        }
+       .button {
+    background-color: #D6A2E8;  /* Blue background */
+    border: none;               /* No border */
+    color: #6D214F;             /* Text color */
+    padding: 12px 24px;         /* Padding inside the button */
+    text-align: center;         /* Center text */
+    text-decoration: none;      /* Remove underline */
+    display: inline-block;      /* Inline-block element */
+    font-size: 16px;            /* Font size */
+    cursor: pointer;            /* Pointer cursor on hover */
+    border-radius: 5px;         /* Rounded corners */
+    position: absolute;            /* Fixed position relative to the viewport */
+    left: 680px;                  /* Center horizontally */
+    bottom: -320px;               /* 50px from the bottom edge */
+    transform: translateX(-50%); /* Adjust for perfect horizontal centering */
+}
+
 
         .button:hover {
             background-color: #6D214F; /* Darker blue on hover */
@@ -96,6 +100,7 @@
         /* Basic navbar styling */
         /* Basic navbar styling */
         .navbar {
+            z-index: 10;
             display: flex;
             position: fixed;
             background: linear-gradient(to bottom, #C3C7F3, #C8A8E9,#E3AADD);
@@ -135,6 +140,71 @@
             }
         }
 
+
+        /* Ensure the profile-section is properly positioned */
+   .profile-section {
+    z-index:5px;
+    display: flex; /* Align items horizontally */
+    align-items: center; /* Center items vertically */
+    padding: 20px; /* Add some padding */
+}
+
+.splash-image {
+z-index:5px;
+    position: relative; /* Ensure the profile image can be absolutely positioned within this container */
+    width: 450px; /* Width of the splash image */
+    height: 450px; /* Height of the splash image */
+    margin-right: 20px; /* Space between splash image and about content */
+}
+
+.splash-image img {
+z-index:5px;
+    margin-top:60px;
+    width: 100%; /* Ensure the image covers the splash-image div */
+    height: 100%; /* Ensure the image covers the splash-image div */
+    border-radius: 50%; /* Make the splash image a circle */
+    object-fit: cover; /* Ensure the image covers the circle area without distortion */
+}
+
+.profile-image {
+z-index:5px;
+    top:100px;
+    position: absolute; /* Position the profile image on top of the splash image */
+    bottom: 0px; /* Distance from the bottom of the splash image */
+    left: 80px; /* Distance from the left edge of the splash image */
+    width: 280px; /* Width of the profile image */
+    height: 320px; /* Height of the profile image */
+    border-radius:100%; /* Make the profile image a circle */
+    overflow: hidden; /* Ensure the image stays within the circle */
+}
+
+.profile-image img {
+z-index:5px;
+    margin-top:10px;
+    width: 280px; /* Ensure the profile image covers the profile-image div */
+    height: 360px; /* Ensure the profile image covers the profile-image div */
+    object-fit: cover; /* Ensure the image fits the circle without distortion */
+}
+
+.about-content {
+       margin-bottom: 100px;
+    max-width: 800px; /* Limit the width of the about content */
+}
+
+.about-content h2 {
+    margin-bottom: 50px; /* Space below the heading */
+    margin-left:300px;
+    font-size:50px;
+
+}
+
+.about-content p {
+    margin-left:100px;
+    line-height: 1.5; /* Improve readability */
+}
+
+
+
     </style>
 </head>
 <body>
@@ -171,8 +241,6 @@
                 <i class="fa-brands fa-instagram" style="color:  #eb3b5a;"></i>
             </a>
         </div>
-
-        <a href="path-to-your-cv-file.pdf" class="button" download="Kaveesha_CV.pdf">Download CV</a>
     </div>
 </div>
 </div>
@@ -188,6 +256,26 @@
     </ul>
 </nav>
 
+<div class="profile-section">
+    <div class="splash-image">
+        <img src="assets/images/abb47031-1794-4fd8-b1ff-98822cf235b0.jpg" alt="Splash Image">
+        <div class="profile-image">
+            <img src="assets/images/f1ce6206-de04-43cd-80d7-480fe7bc50e9.jpg" alt="Profile Image">
+        </div>
+    </div>
+    <div class="about-content">
+        <h2>About Me</h2>
+        <p>I am Nethmi Kaveesha Fernando, a dedicated student at IJSE Campus, having successfully completed the CMJD
+            program and currently pursuing the GDSE program. My passion for design fuels my commitment to staying updated
+            with the latest trends, continuously honing my skills, and creating innovative solutions. I am driven to apply
+            my knowledge and creativity in every project I undertake, ensuring meaningful contributions and excellence in
+            all that I do. You can reach me at +94788309638 or kaveefernando2003@gmail.com. </p>
+    </div>
+    <a href="path-to-your-cv-file.pdf" class="button" download="Kaveesha_CV.pdf">
+        Download CV <i class="fas fa-download" style="margin-left: 10px;"></i>
+    </a>
+
+</div>
 
 </body>
 </html>
