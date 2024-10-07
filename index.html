@@ -160,5 +160,48 @@
 </main>
 </div>
 </div>
+<div class="projects">
+    <header>
+        <h1>My Projects</h1>
+    </header>
+
+    <main>
+        <div class="project-grid">
+            <div class="project-card">
+                <h2>Connect 4 Game</h2>
+                <p>A classic Connect 4 game developed with intuitive gameplay and sleek design.</p>
+                <a href="https://github.com/yourusername/connect4game" target="_blank">View on GitHub</a>
+                <span class="like-btn" onclick="toggleLike(this)">&#9829;</span>
+            </div>
+
+            <div class="project-card">
+                <h2>JavaFX Phone Shop</h2>
+                <p>An interactive phone shop application built using JavaFX with a smooth UI.</p>
+                <a href="https://github.com/yourusername/javafx-phone-shop" target="_blank">View on GitHub</a>
+                <span class="like-btn" onclick="toggleLike(this)">&#9829;</span>
+            </div>
+
+            <div class="project-card">
+                <h2>Layered Architecture Phone Shop</h2>
+                <p>A phone shop project using layered architecture principles for scalable development.</p>
+                <a href="https://github.com/yourusername/layered-architecture-phone-shop" target="_blank">View on GitHub</a>
+                <span class="like-btn" onclick="toggleLike(this)">&#9829;</span>
+            </div>
+
+            <div class="project-card">
+                <h2>Make Calculator</h2>
+                <p>A fully functioning calculator app with basic arithmetic features and a clean UI.</p>
+                <a href="https://github.com/yourusername/make-calculator" target="_blank">View on GitHub</a>
+                <span class="like-btn" onclick="toggleLike(this)">&#9829;</span>
+            </div>
+        </div>
+    </main>
+
+</div>
+<script>
+    function toggleLike(element) {
+        element.classList.toggle('liked');
+    }
+</script>
 </body>
 </html>
