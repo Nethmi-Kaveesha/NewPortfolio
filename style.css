@@ -138,14 +138,14 @@
 
         /* Ensure the profile-section is properly positioned */
    .profile-section {
-    z-index:5px;
+    z-index:5;
     display: flex; /* Align items horizontally */
     align-items: center; /* Center items vertically */
     padding: 20px; /* Add some padding */
 }
 
 .splash-image {
-z-index:5px;
+     z-index:5;
     position: relative; /* Ensure the profile image can be absolutely positioned within this container */
     width: 450px; /* Width of the splash image */
     height: 450px; /* Height of the splash image */
@@ -153,7 +153,7 @@ z-index:5px;
 }
 
 .splash-image img {
-z-index:5px;
+    z-index:5;
     margin-top:60px;
     width: 100%; /* Ensure the image covers the splash-image div */
     height: 100%; /* Ensure the image covers the splash-image div */
@@ -162,19 +162,19 @@ z-index:5px;
 }
 
 .profile-image {
-z-index:5px;
+    z-index:5;
     top:100px;
-    position: absolute; /* Position the profile image on top of the splash image */
-    bottom: 0px; /* Distance from the bottom of the splash image */
-    left: 80px; /* Distance from the left edge of the splash image */
-    width: 280px; /* Width of the profile image */
-    height: 320px; /* Height of the profile image */
-    border-radius:100%; /* Make the profile image a circle */
-    overflow: hidden; /* Ensure the image stays within the circle */
+    position: absolute;
+    bottom: 0px;
+    left: 80px;
+    width: 280px;
+    height: 320px;
+    border-radius:100%;
+    overflow: hidden;
 }
 
 .profile-image img {
-z-index:5px;
+    z-index:5;
     margin-top:10px;
     width: 280px; /* Ensure the profile image covers the profile-image div */
     height: 360px; /* Ensure the profile image covers the profile-image div */
@@ -248,7 +248,7 @@ z-index:5px;
 }
 
 .skill-icon {
-    font-size: 50px; /* Adjust the size as needed */
+    font-size: 50px;
     width: 50px;
     height: 50px;
 }
@@ -407,7 +407,7 @@ a:hover {
     color: #2b6cb0;
 }
 
-/* Like button styling */
+
 .like-btn {
     position: absolute;
     top: 10px;
@@ -420,4 +420,98 @@ a:hover {
 
 .like-btn.liked {
     color: red;
+}
+
+.assignments {
+    padding: 20px;
+    height: 1000px;
+    width: 1000px;
+}
+
+.assignment-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.assignment-card {
+    height: 200px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 25px;
+    position: relative;
+}
+
+.showcase-toggle {
+    display: none;
+}
+
+.showcase-btn {
+    display: inline-block;
+    background-color: purple;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.showcase-toggle:checked + .showcase-btn + .modal {
+    display: flex;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    position: relative;
+    margin: auto;
+}
+
+.case-selection {
+    display: flex;
+    flex-direction: column;
+}
+
+.case-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.close-btn {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #f44336; /* Red */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.assi-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100px;
+    margin-bottom: 20px;
 }
