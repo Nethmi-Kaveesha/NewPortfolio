@@ -69,29 +69,6 @@
 
         }
 
-       .button {
-    background-color: #D6A2E8;  /* Blue background */
-    border: none;               /* No border */
-    color: #6D214F;             /* Text color */
-    padding: 12px 24px;         /* Padding inside the button */
-    text-align: center;         /* Center text */
-    text-decoration: none;      /* Remove underline */
-    display: inline-block;      /* Inline-block element */
-    font-size: 16px;            /* Font size */
-    cursor: pointer;            /* Pointer cursor on hover */
-    border-radius: 5px;         /* Rounded corners */
-    position: absolute;            /* Fixed position relative to the viewport */
-    left: 680px;                  /* Center horizontally */
-    bottom: -320px;               /* 50px from the bottom edge */
-    transform: translateX(-50%); /* Adjust for perfect horizontal centering */
-}
-
-
-        .button:hover {
-            background-color: #6D214F; /* Darker blue on hover */
-            color: #D6A2E8;
-        }
-
         /* Basic navbar styling */
         /* Basic navbar styling */
         .navbar {
@@ -136,83 +113,250 @@
         }
 
 
-        /* Ensure the profile-section is properly positioned */
-   .profile-section {
-    z-index:5;
-    display: flex; /* Align items horizontally */
-    align-items: center; /* Center items vertically */
-    padding: 20px; /* Add some padding */
+.about-me-page{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.splash-image {
-     z-index:5;
-    position: relative; /* Ensure the profile image can be absolutely positioned within this container */
-    width: 450px; /* Width of the splash image */
-    height: 450px; /* Height of the splash image */
-    margin-right: 20px; /* Space between splash image and about content */
+.about-me{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
-.splash-image img {
-    z-index:5;
-    margin-top:60px;
-    width: 100%; /* Ensure the image covers the splash-image div */
-    height: 100%; /* Ensure the image covers the splash-image div */
-    border-radius: 50%; /* Make the splash image a circle */
-    object-fit: cover; /* Ensure the image covers the circle area without distortion */
+.about-container{
+    width: 100%;
+    padding: 50px 8%;
 }
 
-.profile-image {
-    z-index:5;
-    top:100px;
+.imageSection {
+    grid-area: imageSect;
+
+}
+
+.infoSection{
+    grid-area: infoSect;
+
+}
+
+.skillSection{
+    grid-area: skillSect;
+
+}
+
+.about-container .about-contents{
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+    grid-gap: 70px;
+    grid-template-areas: 'imageSect infoSect'
+                         'skillSect skillSect';
+}
+
+.about-contents .imageSection{
+    position: relative;
+    min-width: 300px;
+    height: 380px;
+}
+
+.imageSection {
+    position: relative; /* Critical for positioning ::after */
+    display: block; /* Ensures the block-level context */
+}
+
+.imageSection img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fits correctly */
+    z-index: 2; /* Ensures the image is on top */
+    position: relative; /* Keep image relative within the stacking context */
+}
+
+.about-contents .imageSection::after {
+    content: ''; /* Ensures the pseudo-element exists */
+    position: absolute; /* Absolute position to overlay */
+    width: 100%;
+    height: 100%;
+    outline: 3px solid purple; /* The outline color */
+    top: 15px; /* Adjusted based on your needs */
+    left: 15px; /* Adjusted based on your needs */
+    z-index: 1; /* Ensures it's behind the image */
+    box-sizing: border-box; /* Ensures the outline stays within bounds */
+}
+
+.infoSection{
+    color: #dedce1;
+    font-size: 30px;
+    font-family: helvetica;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.infoSection h1::before{
+    content: '';
     position: absolute;
-    bottom: 0px;
-    left: 80px;
-    width: 280px;
-    height: 320px;
-    border-radius:100%;
-    overflow: hidden;
+    width: 100%;
+    height: 1px;
+    top: 110%;
+    left: 0;
+    background: #aaabb0;
 }
 
-.profile-image img {
-    z-index:5;
-    margin-top:10px;
-    width: 280px; /* Ensure the profile image covers the profile-image div */
-    height: 360px; /* Ensure the profile image covers the profile-image div */
-    object-fit: cover; /* Ensure the image fits the circle without distortion */
+
+.infoSection h2{
+    font-family: helvetica;
+    font-size: 20px;
+    font-weight: 600;
+    color: purple;
+    padding: 14px 0px 15px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
 }
 
-.about-content {
-
-       margin-bottom: 100px;
-    max-width: 800px; /* Limit the width of the about content */
+.infoSection p{
+    color: #aaabb0;
+    font-size: 12px;
+    line-height: 1.2;
+    text-align: justify;
+    padding-bottom: 8px;
 }
 
-.about-content h2 {
-   font-family: "Spicy Rice", serif;
-    margin-bottom: 50px; /* Space below the heading */
-    margin-left:300px;
-    font-size:50px;
-    color:  #b04d6d  ;
-
+.personalInfo{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px 20px;
+    margin-top: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #555;
 }
 
-.about-content p {
-    margin-left:100px;
-    line-height: 1.5; /* Improve readability */
+.personalInfo{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px 20px;
+    margin-top: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #555;
 }
 
-    .skills-page{
-        margin-top:50px;
-        height:600px;
-        width:100%;
-         background: linear-gradient(to top, #a09e9e , #a09e9e ,#d6d1d0, #e5e0df ,#f3efee,#F4E7FB);
+.personalInfo div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.personalInfo div span{
+    font-size: 12px;
+    color: #aaabb0;
+    letter-spacing: 1px;
+}
+
+.infoSection button{
+    min-width: 150px;
+    padding: 8px 18px;
+    border: 1px solid purple;
+    border-radius: 25px;
+    font-size: 18px;
+    background-color: #2b2a2f;
+    color: #aaabb0;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.4s;
+    margin-top: 20px;
+}
+
+.infoSection button:hover{
+    color: purple;
+    border-color: #aaabb0;
+}
+
+
+.skillSection{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px 80px;
+}
+
+.skillSection .subject{
+    font-size: 17px;
+    font-weight: lighter;
+    color: #aaabb0;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+.progress-bar{
+    width: 100%;
+    height: 16px;
+    background: rebeccapurple;
+    padding: 4px 6px;
+    border-top: 1px solid purple;
+    border-bottom: 1px solid plum;
+    border-radius: 15px;
+}
+
+.progress-line{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: plum;
+    box-shadow: -1px -1px 2px #222222,
+                1px 1px 2px purple;
+    border-radius: 15px;
+}
+
+.progress-line::after{
+    position: absolute;
+    content: attr(value);
+    top: -35px;
+    right: 0;
+    transform: translateX(-50%);
+    color: #aaabb0;
+    font-size: 17px;
+}
+
+@media (max-width: 1024px) {
+    .about-container .about-contents{
+        grid-template-areas: 'imageSect  skillSect'
+                         'infoSect infoSect';
     }
 
+    .skillSection{
+        grid-template-columns: 1fr;
+        grid-gap:  20px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .about-container .about-contents{
+        grid-template-areas: 'imageSect  imageSect'
+                         'infoSect infoSect'
+                            'skillSect skillSect';
+    }
+}
+
+
+@media (max-width: 425px) {
+    .personalInfo{
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
         .third {
+            width: 100%;
     font-family: Arial, sans-serif;
-    margin: 70px;
+
     padding: 0;
-    background-color: #f4f4f4;
+            background: linear-gradient(to top, #a09e9e , #a09e9e ,#d6d1d0, #e5e0df ,#f3efee,#F4E7FB);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -269,7 +413,6 @@ p {
 }
 
 .edu-body {
-    background:  #ebdef5;
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -351,7 +494,7 @@ border:2px solid white;
 
 .projects {
     height:685px;
-    background-color: #f9f9f9;
+    background:  #ebdef5;
     color: #333;
     padding: 20px;
 }
@@ -424,7 +567,7 @@ a:hover {
 
 .assignments {
     padding: 20px;
-    height: 1000px;
+
     width: 1000px;
 }
 
@@ -476,7 +619,7 @@ a:hover {
 
 .modal-content {
     background-color: #fefefe;
-    padding: 20px;
+    padding: 10px;
     border: 1px solid #888;
     width: 80%;
     max-width: 600px;
@@ -515,3 +658,307 @@ a:hover {
     height: 100px;
     margin-bottom: 20px;
 }
+
+.gallery-page {
+    margin: 0;
+    padding: 50px;
+    box-sizing: border-box;
+    background: linear-gradient(to right, #6D214F, black);
+    height: 90vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    justify-content: flex-start; /* Align children at the top */
+    overflow: hidden;
+}
+
+.gallery-page h1{
+    color: white;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center; /* Center the slider within the gallery */
+    align-items: flex-start; /* Align items at the start of the gallery */
+    margin-top: 120px; /* Add space from the top if needed */
+}
+
+.slider {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    animation: rotate 30s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100% {
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}
+
+.slider span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(350px);
+}
+
+.slider span img {
+    border: 5px solid white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: 2s;
+
+    display: block; /
+}
+
+.slider span:hover img {
+    transform: translateY(-50px) scale(1.2);
+}
+ .contact{
+height: 1000px;
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+ }
+.main .contact-page{
+
+    background: black;
+}
+
+div .contact-page,input,textarea,a{
+    font-family:'Roboto Thin', sans-serif;
+}
+
+.section-wrapper{
+    width: 100%;
+    padding: 10px;
+}
+
+.box-wrapper{
+    position: relative;
+    display: table;
+    width: 1100px;
+    margin: auto;
+    margin-top: 35px;
+    border-radius: 30px;
+}
+
+.info-wrapper{
+    width: 35%;
+    height: 620px;
+    padding: 40px;
+    float: left;
+    display: block;
+    border-radius: 30px 0px 0px 30px;
+    background: linear-gradient(144deg,rgba(126,39,156,1)0%,rgba(49,39,157,1)100%);
+    color: white;
+}
+
+.info-title{
+    text-align: left;
+    font-size: 28px;
+    letter-spacing: 0.5px;
+}
+
+.info-sub-title{
+    font-size: 18px;
+    font-weight: 300;
+    margin-top: 17px;
+    letter-spacing: 0.5px;
+    line-height: 26px;
+}
+
+.info-details{
+    list-style: none;
+    margin: 60px 0px;
+}
+
+.info-details li{
+    margin-top: 25px;
+    font-size: 18px;
+    color: white;
+}
+
+.info-details li i{
+    background: #F44770;
+    padding: 12px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.info-details li a{
+    color: white;
+    text-decoration: none;
+}
+
+.info-details li a:hover{
+    color: #F44770;
+}
+
+.social-icons{
+    list-style: none;
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.social-icons li{
+    display: inline-block;
+}
+
+.social-icons li i{
+    background: #F44770;
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+    border-radius: 22%;
+    margin: 0px 5px;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.social-icons li i:hover{
+    background: white;
+    color: black;
+}
+
+.form-wrap{
+    left: 464px;
+    top: 0.5px;
+    position: absolute;
+    height: 630px;
+    width: 500px;
+    float: right;
+    padding: 40px 25px 35px 25px;
+    border-radius: 0px 30px 30px 0px;
+    background: #ecf0f3;
+}
+
+.form-title{
+    text-align: left;
+    margin-left: 23px;
+    font-size: 28px;
+    letter-spacing: 0.5px;
+}
+
+.form-fields input,
+.form-fields textarea{
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 18px;
+    color: #555;
+    padding: 20px 10px 20px 5px;
+    width: 100%;
+
+}
+
+.form-fields textarea{
+    height: 100px;
+    width: 90px;
+    resize: none;
+}
+
+.form-group{
+    width: 46%;
+    float: left;
+    padding: 0px 30px;
+    margin: 14px 12px;
+    border-radius: 25px;
+    box-shadow: inset 8px 8px 8px #cbc3d1 , inset -8px -8px 8px #ffffff;
+
+}
+
+.form-fields .form-group:last-child{
+    width: 80%;
+    height: 50%;
+}
+
+.submit-button{
+    border: none;
+    width: 96%;
+    height: 50px;
+    margin: 15px 12px;
+    border-radius: 30px;
+    font-size: 20px ;
+    font-weight: 700;
+    outline: none;
+    cursor: pointer;
+    color: #ffffff;
+    text-align: center;
+    background: #F44770;
+    box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
+    transition: .5s;
+}
+
+.submit-button:hover{
+    background: #31279d;
+}
+
+/*Responsive css*/
+
+@media only screen and (max-width: 767px) {
+    .box-wrapper {
+        width: 100% !important;
+    }
+
+    .info-wrapper,
+    .form-wrap {
+        width: 100% !important;
+        height: inherit !important;
+        float: none !important;
+    }
+
+    .info-wrapper {
+        border-radius: 30px 30px 0px 0px !important;
+    }
+
+    .form-wrap {
+        border-radius: 0px 0px 30px 30px !important;
+    }
+
+    .form-group {
+        width: 100% !important;
+        float: none !important;
+        margin: 25px 0px !important;
+    }
+
+    .form-fields .form-group:last-child,
+    .submit-button {
+        width: 100% !important;
+    }
+
+    .submit-button {
+        margin: 10px 0px !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
