@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Website</title>
+    <style>
+        /* Global styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px 20px;
+            color: white;
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .navbar .nav-links li {
+            margin-left: 20px;
+        }
+
+        .navbar .nav-links li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .navbar .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .navbar .hamburger-menu span {
+            width: 25px;
+            height: 2px;
+            background-color: white;
+            margin: 3px 0;
+        }
+
+        .section, .parallax {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .section {
+            background-color: #f4f4f4;
+        }
+
+        .parallax {
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .parallax-1 {
+            background-image: url('https://cdn.pixabay.com/photo/2016/11/29/05/49/beach-1867317_1280.jpg');
+        }
+
+        .parallax-2 {
+            background-image: url('https://cdn.pixabay.com/photo/2015/12/01/20/28/forest-1072828_1280.jpg');
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: black;
+            color: white;
+        }
+
+        /* Media Queries from Range to Range */
+
+        /* 1440px and larger screens */
+        @media (min-width: 1440px) {
+            .navbar .logo {
+                font-size: 24px;
+            }
+            .navbar .nav-links li a {
+                font-size: 20px;
+            }
+            .section, .parallax {
+                padding: 50px;
+            }
+        }
+
+        /* 1024px to 1440px - Laptop and Large Tablet Screens */
+        @media (min-width: 1024px) and (max-width: 1439px) {
+            .navbar .logo {
+                font-size: 22px;
+            }
+            .navbar .nav-links li a {
+                font-size: 18px;
+            }
+            .section, .parallax {
+                padding: 40px;
+            }
+        }
+
+        /* 768px to 1023px - Tablet Screens */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .navbar .logo {
+                font-size: 20px;
+            }
+            .navbar .nav-links li a {
+                font-size: 16px;
+            }
+            .section, .parallax {
+                padding: 30px;
+            }
+
+            .navbar .nav-links {
+                display: none;
+                flex-direction: column;
+                background-color: rgba(0, 0, 0, 0.7);
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+            }
+
+            .navbar.active .nav-links {
+                display: flex;
+            }
+
+            .navbar .hamburger-menu {
+                display: flex;
+            }
+        }
+
+        /* 425px to 767px - Mobile Large Screens */
+        @media (min-width: 425px) and (max-width: 767px) {
+            .navbar .logo {
+                font-size: 18px;
+            }
+
+            .navbar .nav-links li a {
+                font-size: 14px;
+            }
+
+            .navbar .hamburger-menu span {
+                width: 22px;
+            }
+
+            .section, .parallax {
+                padding: 25px;
+            }
+        }
+
+        /* 325px to 424px - Mobile Medium Screens */
+        @media (min-width: 325px) and (max-width: 424px) {
+            .navbar .logo {
+                font-size: 16px;
+            }
+
+            .navbar .nav-links li a {
+                font-size: 12px;
+            }
+
+            .navbar .hamburger-menu span {
+                width: 20px;
+            }
+
+            .section, .parallax {
+                padding: 20px;
+            }
+        }
+
+        /* 320px to 324px - Mobile Small Screens */
+        @media (min-width: 320px) and (max-width: 324px) {
+            .navbar .logo {
+                font-size: 14px;
+            }
+
+            .navbar .nav-links li a {
+                font-size: 11px;
+            }
+
+            .navbar .hamburger-menu span {
+                width: 18px;
+            }
+
+            .section, .parallax {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <div class="logo">Kaveesha</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+</header>
+
+<section id="home" class="parallax parallax-1">
+    <div class="content">
+        <h1>Welcome to Kaveesha's Site</h1>
+    </div>
+</section>
+
+<section id="about" class="section">
+    <h2>About Me</h2>
+    <p>This is a simple parallax website demo with responsive design.</p>
+</section>
+
+<section id="services" class="parallax parallax-2">
+    <div class="content">
+        <h2>Services</h2>
+        <p>Providing web development and design services.</p>
+    </div>
+</section>
+
+<section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Reach me through social media or the form below.</p>
+</section>
+
+<footer>
+    <p>&copy; 2024 Kaveesha. All rights reserved.</p>
+</footer>
+
+<script>
+    function toggleMenu() {
+        const navbar = document.querySelector('.navbar');
+        navbar.classList.toggle('active');
+    }
+</script>
+</body>
+</html>

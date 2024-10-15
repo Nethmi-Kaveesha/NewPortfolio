@@ -100,7 +100,6 @@ body {
 section {
     padding: 50px 8%;
     color: #dedce1;
-    background-color: #2b2a2f;
 }
 
 h1{
@@ -526,22 +525,25 @@ p {
     }
 
     p {
-        color: #666;
         font-size: 1.3em; /* Increased font size for better readability */
     }
 }
 /* Base Styles */
 .edu-body {
     width: 100%;
-    min-height: 80vh;
+    min-height: 100vh; /* Full viewport height */
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;     /* Centers vertically */
+    padding: 20px;           /* Optional: padding for some space around the content */
+    box-sizing: border-box;  /* Ensure padding is included in the element's width/height */
+
 }
 
 .container {
     width: 100%;
-    padding: 35px 10%;
+    max-width: 1440px; /* Restrict max width for larger screens */
+    padding: 35px 10%; /* Padding inside the container */
 }
 
 main.education-row {
@@ -551,13 +553,14 @@ main.education-row {
 }
 
 .box {
-    display: flex; /* Use Flexbox for image and text alignment */
-    align-items: center; /* Align items vertically in the center */
+    justify-content: center;
+    display: flex;
+    align-items: center;
     border: 2px solid purple;
-    padding: 20px;
+
     box-sizing: border-box;
     border-radius: 8px;
-    width: 100%;
+    width: 530px;
 }
 
 .box img {
@@ -613,11 +616,11 @@ main.education-row {
 @media (min-width: 1440px) {
     main.education-row {
         grid-template-columns: repeat(2, 1fr); /* Two columns for larger screens */
-        grid-column-gap: 30px; /* Increased gap between columns */
+        grid-column-gap: 20px; /* Increased gap between columns */
     }
 
     .box {
-        padding: 25px; /* Increased padding for a more spacious feel */
+        padding: 20px; /* Increased padding for a more spacious feel */
     }
 
     .box img {
@@ -638,11 +641,17 @@ main.education-row {
 /* For screens larger than 1440px */
 @media (min-width: 1441px) {
     .edu-body {
-        padding: 20px; /* More padding around the section */
+        width: 100%;
+        min-height: 100vh; /* Full viewport height */
+        display: flex;
+        justify-content: center; /* Centers horizontally */
+        align-items: center;     /* Centers vertically */
+        padding: 10px;           /* Optional: padding for some space around the content */
+        box-sizing: border-box;
     }
 
     .container {
-        padding: 50px 10%; /* More padding for a spacious look */
+        padding: 20px 10%; /* More padding for a spacious look */
     }
 
     main.education-row {
@@ -668,8 +677,9 @@ main.education-row {
     }
 }
 
+/* Base Styles */
 .projects {
-    height:685px;
+    height: 685px;
     background:  #ebdef5;
     color: #333;
     padding: 20px;
@@ -726,7 +736,6 @@ a:hover {
     color: #2b6cb0;
 }
 
-
 .like-btn {
     position: absolute;
     top: 10px;
@@ -740,6 +749,48 @@ a:hover {
 .like-btn.liked {
     color: red;
 }
+
+/* Media Queries for 1440px and above */
+@media (min-width: 1440px) {
+    .projects {
+        height: auto; /* Let the height adjust to the content */
+        padding: 40px; /* Add more padding for larger screens */
+        background: #d1c4e9; /* Slightly darker background for large screens */
+    }
+
+    h1 {
+        font-size: 48px; /* Increase font size for larger screens */
+        margin-bottom: 20px;
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(3, 1fr); /* Three columns on larger screens */
+        gap: 40px; /* Increase gap between the cards */
+    }
+
+    .project-card {
+        padding: 20px; /* Increase padding inside cards */
+        border-radius: 16px; /* Slightly larger border-radius for a softer look */
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Increase shadow for more depth */
+    }
+
+    h2 {
+        font-size: 28px; /* Increase the title size inside the project cards */
+    }
+
+    p {
+        font-size: 18px; /* Increase paragraph font size */
+    }
+
+    a {
+        font-size: 18px; /* Slightly larger link text */
+    }
+
+    .like-btn {
+        font-size: 28px; /* Larger like button */
+    }
+}
+
 
 .assignments {
     padding: 20px;
