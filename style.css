@@ -792,25 +792,35 @@ a:hover {
 }
 
 
+/* Base Styles */
 .assignments {
     padding: 20px;
-
-    width: 1000px;
+    width: 100%; /* Full width for responsiveness */
+    max-width: 1200px; /* Limit the maximum width */
+    margin: 0 auto; /* Center the assignments section */
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center items horizontally */
 }
 
 .assignment-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between cards */
+    justify-items: center; /* Center items in the grid */
 }
 
 .assignment-card {
-    height: 200px;
-    width: 300px;
+    height: 200px; /* Fixed height for uniformity */
+    width: 300px; /* Fixed width for consistency */
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 25px;
-    position: relative;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text */
 }
 
 .showcase-toggle {
@@ -824,6 +834,7 @@ a:hover {
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 10px; /* Space above the button */
 }
 
 .modal {
@@ -852,7 +863,7 @@ a:hover {
     max-width: 600px;
     border-radius: 8px;
     position: relative;
-    margin: auto;
+    margin: auto; /* Center modal content */
 }
 
 .case-selection {
@@ -885,6 +896,51 @@ a:hover {
     height: 100px;
     margin-bottom: 20px;
 }
+
+@media (max-width: 1440px) {
+    .assignment-grid {
+        grid-template-columns: repeat(3, 1fr); /* Three columns for screens below 1440px */
+        gap: 20px; /* Set a suitable gap for spacing */
+    }
+}
+
+/* Media Queries for 1440px and above */
+@media (min-width: 1440px) {
+    .assignment-grid {
+        grid-template-columns: repeat(4, 1fr); /* Four columns for screens 1440px and above */
+        gap: 30px; /* Increased gap for better spacing */
+    }
+
+
+    .assignment-grid {
+        grid-template-columns: repeat(4, 1fr); /* Four columns on larger screens */
+        gap: 30px; /* Increased gap for better spacing */
+    }
+
+    .assignment-card {
+        height: 250px; /* Increased height for larger screens */
+        width: 350px; /* Increased width for consistency */
+        padding: 30px; /* More padding inside the cards */
+        border-radius: 12px; /* Slightly larger border radius */
+    }
+
+    .showcase-btn {
+        padding: 12px 18px; /* Larger button size */
+        margin-top: 20px; /* More space above the button */
+    }
+
+    .modal-content {
+        padding: 20px; /* Increased padding for the modal content */
+        max-width: 800px; /* Increase the modal size on larger screens */
+    }
+
+    .assi-title {
+        height: 120px; /* Taller title section */
+        font-size: 28px; /* Larger text for title */
+        margin-bottom: 30px; /* Increased space below the title */
+    }
+}
+
 
 .gallery-page {
     margin: 0;
