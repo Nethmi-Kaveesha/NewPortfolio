@@ -1432,7 +1432,8 @@ a:hover {
 .contact-container .contactForm form .inputBox input,
 .contact-container .contactForm form .inputBox textarea
 {
-    width: 100%;
+
+    width: 100% !important;
     padding: 5px 0;
     font-size: 1.1em;
     margin: 10px 0;
@@ -1442,6 +1443,108 @@ a:hover {
     color: #fff;
     outline: none;
     resize: none;
+}
+
+.contact-container .contactForm form .inputBox span{
+    position: absolute;
+    left: 0;
+    pointer-events: none;
+    padding: 5px 0;
+    margin: 10px 0;
+    font-size: 1.1em;
+    color: #fff;
+    transition: 0.5s;
+}
+
+.contact-container .contactForm form .inputBox input:focus ~ span,
+.contact-container .contactForm form .inputBox textarea:focus ~ span,
+
+.contact-container .contactForm form .inputBox input:valid ~ span,
+.contact-container .contactForm form .inputBox textarea:valid ~ span
+{
+    color: goldenrod;
+    font-size: 0.9em;
+    transform: translateY(-24px);
+}
+
+.contact-container .contactForm form .inputBox input[type="submit"]{
+    width: 100%;
+    background: goldenrod;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+/*make responsive*/
+@media (max-width: 1440px) {
+    .contact{
+        padding: 50px;
+    }
+
+    .contact-container{
+        flex-direction: column;
+    }
+
+    .contact-container .contactInfo,
+    .contact-container .contactForm{
+        width: 100%;
+    }
+
+    .contact-container .contactForm{
+        padding: 40px;
+    }
+
+    .contact-container .contactForm form{
+        padding: 30px;
+    }
+}
+
+
+@media (min-width: 1441px) {
+    .contact{
+        padding: 100px 150px;
+    }
+
+    .contact-container{
+        gap: 80px;
+    }
+
+    .contact-container .contactInfo{
+        width: 45%;
+    }
+
+    .contact-container .contactForm{
+        width: 45%;
+        padding: 80px;
+    }
+
+    .contact-container .contactForm form{
+        padding: 60px;
+    }
+
+    .contact-container .contactInfo .box-contact .icon{
+        min-width: 70px;
+        height: 70px;
+    }
+
+    .contact-container .contactInfo .box-contact .icon i{
+        font-size: 1.5em;
+    }
+
+    .contact-container .contactInfo .box-contact .text h3{
+        font-size: 1.5em;
+    }
+
+    .contact-container .contactForm form h2{
+        font-size: 2.5em;
+    }
+
+    .contact-container .contactForm form .inputBox input,
+    .contact-container .contactForm form .inputBox textarea {
+        font-size: 1.25em;
+    }
 }
 
 
