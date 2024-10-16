@@ -8,6 +8,7 @@
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,30 +17,55 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+<div class="parallax">
+<div class="parallax-content">
+    <h1>Nethmi Kaveesha Fernando</h1>
+    <p>Welcome to my creative portfolio!</p>
+</div>
+</div>
 <nav class="navbar">
     <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="#about"><i class="fas fa-user"></i> About Me</a></li>
+        <li>
+            <a href="#projects"><i class="fas fa-briefcase"></i> Projects</a>
+            <ul class="dropdown">
+                <li><a href="#project1">Project 1</a></li>
+                <li><a href="#project2">Project 2</a></li>
+            </ul>
+        </li>
+        <li><a href="#gallery"><i class="fas fa-images"></i> Gallery</a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
     </ul>
 </nav>
-
-<div class="parallax"></div>
-
 <section class="home">
+        <div class="background-animation">
+            <div class="circle circle1"></div>
+            <div class="circle circle2"></div>
+            <div class="circle circle3"></div>
+        </div>
+    </div> <!-- Background circles -->
     <div class="home-content">
         <div class="text-section">
-            <h1>Hello it’s Me</h1>
-            <h2>Kaveesha Fernando</h2>
-            <p>This is my official portfolio website to shows all Details and work experience web development</p>
+            <h1 class="hello"><i class="fas fa-hand-wave"></i> Hello!</h1>
+            <h2 class="name">Kaveesha Fernando</h2>
+            <p class="description">This is my official portfolio website to show all details and work experience in web development.</p>
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
         </div>
         <div class="image-section">
-            <img src="assets/images/my-2.jpg" alt="Your Image">
+            <img src="assets/images/my-2.jpg" alt="Your Image" class="profile-image">
         </div>
     </div>
 </section>
+
+
+
+
 <div class="about-me-page">
 <div class="about-me">
 <div class="about-container">
@@ -608,6 +634,50 @@
     </div>
 </section>
 </div>
+<footer>
+    <div class="footer-container">
+        <div class="footer-row">
+            <!-- Footer Column 1 -->
+            <div class="footer-col">
+                <h3>About Us</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.</p>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Address</li>
+                    <li><i class="fas fa-phone"></i> +123 456 7890</li>
+                    <li><i class="fas fa-envelope"></i> email@example.com</li>
+                </ul>
+            </div>
+
+            <!-- Footer Column 2 -->
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><i class="fas fa-chevron-right"></i> Home</li>
+                    <li><i class="fas fa-chevron-right"></i> Services</li>
+                    <li><i class="fas fa-chevron-right"></i> Projects</li>
+                    <li><i class="fas fa-chevron-right"></i> Contact</li>
+                </ul>
+            </div>
+
+            <!-- Footer Column 3 -->
+            <div class="footer-col">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+    </div>
+</footer>
+
 <!--<div class="contact">-->
 <!--<main class="contact-page">-->
 <!--<div class="section-wrapper">-->
@@ -691,6 +761,15 @@
     function toggleLike(element) {
         element.classList.toggle('liked');
     }
+
+    document.querySelectorAll('.navbar a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
 </script>
 </body>
 </html>
