@@ -1,101 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-body {
-    padding-top: 60px;
-    font-family: 'Helvetica', sans-serif;
-    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
-}
-
-.navbar {
-    background-color: #000000; /* Black background for navbar */
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
-}
-
-.navbar ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    padding: 15px 0;
-}
-
-.navbar li {
-    margin: 0 25px; /* Increased margin for more space */
-    position: relative; /* For positioning dropdown */
-}
-
-.navbar a {
-    text-decoration: none;
-    color: #ffffff; /* White color for links */
-    font-size: 18px;
-    padding: 10px 15px; /* Padding for clickable area */
-    border-radius: 5px; /* Rounded corners */
-    transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Transition effects */
-}
-
-.navbar a:hover {
-    background-color: #ffd700; /* Gold background on hover */
-    color: #000000; /* Change text color to black */
-    transform: translateY(-3px); /* Lift effect on hover */
-}
-
-/* Dropdown styles */
-.dropdown {
-    display: none; /* Hide dropdown by default */
-    position: absolute; /* Position it relative to the parent */
-    top: 100%; /* Position below the navbar */
-    left: 0;
-    background-color: #000000; /* Match dropdown with navbar */
-    border-radius: 4px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    opacity: 0; /* Start invisible for animation */
-    transition: opacity 0.3s; /* Smooth transition for visibility */
-}
-
-.navbar li:hover .dropdown {
-    display: block; /* Show dropdown on hover */
-    opacity: 1; /* Make it visible */
-}
-
-.dropdown li {
-    margin: 0; /* Remove margins for dropdown items */
-}
-
-.dropdown a {
-    display: block; /* Make links block elements */
-    padding: 10px 20px; /* Add padding */
-    color: #ffffff; /* Same color as main links */
-    transition: background-color 0.3s, color 0.3s; /* Transition for background */
-}
-
-.dropdown a:hover {
-    background-color: #ffd700; /* Gold background on hover */
-    color: #000000; /* Change text color to black */
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .navbar ul {
-        flex-direction: column; /* Stack items vertically */
-        padding: 10px 0; /* Adjust padding */
-    }
-
-    .navbar li {
-        margin: 10px 0; /* Space between items */
-    }
-
-    .navbar a {
-        font-size: 16px; /* Adjust font size for mobile */
-        padding: 8px 10px; /* Adjust padding for mobile */
-    }
-}
 
 .parallax {
     background-image: url('assets/images/my-1.jpg'); /* Replace with your image */
@@ -213,23 +116,218 @@ p {
         font-size: 0.9em; /* Smaller font for extra small devices */
     }
 }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+    .parallax {
+        background-image: url('assets/images/my-2.jpg'); /* Small screen image */
+        height: 80vh; /* Slightly reduce height */
+    }
+
+    .parallax-content h1 {
+        font-size: 3em; /* Smaller heading */
+    }
+
+    .parallax-content p {
+        font-size: 1.2em; /* Smaller paragraph text */
+    }
+}
+
+/* Styles for 425px to 768px */
+@media (max-width: 768px) and (min-width: 425px) {
+    .parallax {
+        background-image: url('assets/images/my-2.jpg'); /* Extra small screen image */
+        height: 60vh; /* Reduce height further */
+    }
+
+    .parallax-content h1 {
+        font-size: 2.5em; /* Even smaller heading */
+    }
+
+    .parallax-content p {
+        font-size: 1em; /* Adjust paragraph text */
+    }
+}
+
+/* Styles for 375px to 425px */
+@media (max-width: 425px) and (min-width: 375px) {
+    .parallax {
+        background-image: url('assets/images/my-2.jpg'); /* Smallest screen image */
+        height: 50vh; /* Further reduce height */
+    }
+
+    .parallax-content h1 {
+        font-size: 2em; /* Smallest heading */
+    }
+
+    .parallax-content p {
+        font-size: 0.9em; /* Smaller paragraph text */
+    }
+}
+
+/* Styles for 320px to 375px */
+@media (max-width: 375px) {
+    .parallax {
+        height: 40vh; /* Minimum height */
+    }
+
+    .parallax-content h1 {
+        font-size: 1.5em; /* Heading for smallest screens */
+    }
+
+    .parallax-content p {
+        font-size: 0.8em; /* Smaller paragraph text */
+    }
+}
+
+/* Styles for below 320px */
+@media (max-width: 320px) {
+    .parallax {
+        height: 30vh; /* Further minimize height for extra small screens */
+        background-image: url('assets/images/my-2.jpg'); /* Specify an even smaller screen image */
+        background-size: cover; /* Ensure background covers the area */
+    }
+
+    .parallax-content {
+        padding: 5px; /* Reduce padding for tight spaces */
+    }
+
+    .parallax-content h1 {
+        font-size: 1.2em; /* Further reduce heading size */
+        margin: 0; /* Keep margin removed for better fit */
+    }
+
+    .parallax-content p {
+        font-size: 0.7em; /* Smaller paragraph text for extra small devices */
+        margin-top: 3px; /* Adjust space above the paragraph */
+    }
+}
+
+/* Previous media queries here */
+
+/* Styles for screens between 375px and 320px */
+@media (max-width: 375px) and (min-width: 321px) {
+    .parallax {
+        height: 40vh; /* Set height for small screens */
+        background-image: url('assets/images/my-2.jpg'); /* Specify a smaller image for better fit */
+        background-size: cover; /* Ensure the background covers the area */
+    }
+
+    .parallax-content {
+        padding: 10px; /* Adjust padding for small screens */
+    }
+
+    .parallax-content h1 {
+        font-size: 1.5em; /* Slightly reduce heading size */
+        margin: 0; /* Remove margin for better fit */
+    }
+
+    .parallax-content p {
+        font-size: 0.9em; /* Reduce paragraph font size */
+        margin-top: 5px; /* Adjust space above the paragraph */
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 15px 30px;
+    position: relative;
+}
+
+.logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    transition: background 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin: 3px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px; /* Adjust based on navbar height */
+        left: 0;
+        background-color: #333;
+        width: 100%;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+@media (min-width: 769px) {
+    .nav-links {
+        display: flex;
+    }
+}
 
 body {
     font-family: 'Poppins', sans-serif;
 }
 
+/* Base Styles */
 .home {
     margin: 0;
     position: relative;
     overflow: hidden;
     padding: 0;
-    height: 600px;
+    height: 600px; /* Default height */
     text-align: center;
     background: linear-gradient(135deg, #3b3b3b, #000000, #b8860b);
-
-
 }
 
+/* Background Animation */
 .background-animation {
     position: absolute;
     top: 0;
@@ -239,53 +337,27 @@ body {
     pointer-events: none; /* Prevent interaction with circles */
 }
 
-.background-animation::before,
-.background-animation::after {
-    content: '';
+.background-animation .circle {
     position: absolute;
     border-radius: 50%;
-    animation: float 6s infinite ease-in-out;
     background: rgba(255, 255, 255, 0.2); /* Light circles */
+    animation: float 6s infinite ease-in-out;
 }
 
-.background-animation::before {
-    width: 100px;
-    height: 100px;
+/* Specific circles */
+.circle1 {
+    width: 30px;
+    height: 30px;
     top: 10%;
     left: 20%;
     animation-delay: 0s;
 }
 
-.background-animation::after {
-    width: 50px;
-    height: 50px;
-    top: 30%;
-    left: 60%;
-    animation-delay: 2s;
-}
-
-/* Add more small circles using additional pseudo-elements */
-.background-animation .circle {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
-    animation: float 6s infinite ease-in-out;
-}
-
-/* Additional circles */
-.circle1 {
-    width: 30px;
-    height: 30px;
-    top: 70%;
-    left: 10%;
-    animation-delay: 1s;
-}
-
 .circle2 {
     width: 20px;
     height: 20px;
-    top: 40%;
-    left: 80%;
+    top: 30%;
+    left: 60%;
     animation-delay: 2.5s;
 }
 
@@ -310,8 +382,9 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    z-index: 1;
+    z-index: 1; /* Keep content above circles */
     height: 100%; /* Make content fill the height of the section */
+    padding: 20px; /* Add padding for better spacing */
 }
 
 .text-section {
@@ -362,20 +435,76 @@ body {
 }
 
 /* Responsive Styles */
-@media (max-width: 768px) {
-    .home-content {
-        flex-direction: column;
-        text-align: center;
-    }
 
-    .text-section {
-        margin-right: 0;
-    }
-
-    .profile-image {
-        width: 200px; /* Adjust for smaller screens */
+/* 1440px and above */
+@media (min-width: 1440px) {
+    .home {
+        height: 600px; /* Maintain default height */
     }
 }
+
+/* 1440px to 1024px */
+@media (max-width: 1440px) and (min-width: 1024px) {
+    .home {
+        height: 550px; /* Slightly reduce height */
+    }
+}
+
+/* 1024px to 768px */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .home {
+        height: 500px; /* Further reduce height */
+    }
+}
+
+/* 768px to 425px */
+@media (max-width: 768px) and (min-width: 425px) {
+    .home {
+        height: 450px; /* Adjust height for this range */
+    }
+}
+
+/* 425px to 375px */
+@media (max-width: 425px) and (min-width: 375px) {
+    .home {
+        height: 400px; /* Adjust height for this range */
+    }
+    .home-content {
+        flex-direction: column; /* Stack content vertically */
+        padding: 10px; /* Reduce padding */
+    }
+}
+
+/* 375px to 320px */
+@media (max-width: 375px) and (min-width: 321px) {
+    .home {
+        height: 350px; /* Adjust height for this range */
+    }
+    .home-content {
+        flex-direction: column; /* Stack content vertically */
+        padding: 5px; /* Reduce padding */
+    }
+    .text-section {
+        max-width: 90%; /* Allow more space for text */
+        margin-right: 0; /* Remove right margin */
+    }
+}
+
+/* Below 320px */
+@media (max-width: 320px) {
+    .home {
+        height: 300px; /* Adjust height for this range */
+    }
+    .home-content {
+        flex-direction: column; /* Stack content vertically */
+        padding: 5px; /* Reduce padding */
+    }
+    .text-section {
+        max-width: 90%; /* Allow more space for text */
+        margin-right: 0; /* Remove right margin */
+    }
+}
+
 
 @media (min-width: 1025px) and (max-width: 1440px) {
     .navbar {
@@ -794,214 +923,161 @@ p {
     }
 }
 /* Base Styles */
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Include padding and border in total size */
+}
+
+/* General Styles */
+html, body {
+    height: 100%; /* Ensure body fills the viewport */
+    background-color: #101010; /* Set background color */
+}
+
 .edu-body {
-    background: linear-gradient(135deg, #1a1a1a, #444444);
-
-    width: 100%;
-    min-height: 100vh; /* Full viewport height */
-    display: flex;
-    justify-content: center; /* Centers horizontally */
-    align-items: center;     /* Centers vertically */
-    padding: 20px;           /* Optional: padding for some space around the content */
-    box-sizing: border-box;  /* Ensure padding is included in the element's width/height */
-
+    background-color: #101010; /* Dark background */
+    color: #fff; /* White text */
+    padding: 20px;
 }
 
 .container {
-    width: 100%;
-    max-width: 1440px; /* Restrict max width for larger screens */
-    padding: 35px 10%; /* Padding inside the container */
-}
-
-main.education-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 20px;
-}
-
-.box {
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    border: 2px solid darkgoldenrod;
-
-    box-sizing: border-box;
-    border-radius: 8px;
-    width: 530px;
-}
-
-.box img {
-    width: 150px;
-    height: 100px;
-    margin-right: 15px; /* Space between image and paragraph */
-}
-
-.box p {
-    font-size: 15px;
-    margin: 0;
-    line-height: 1.6;
-}
-
-.col header.title {
-    font-family: Helvetica, sans-serif; /* Fixed typo: helvetice */
-    color: palegoldenrod;
-}
-
-.col .content {
-    padding: 0px 30px;
-    border-left: 2px solid palegoldenrod;
-}
-
-.col .content .box {
-    position: relative;
+    max-width: 1200px;
+    margin: auto;
     padding: 20px;
-    border: 3px solid darkgoldenrod;
-    background-color: palegoldenrod;
-    cursor: pointer;
-    transition: all 0.4s;
+}
+
+header h2 {
+    text-align: center;
+    font-size: 2.5rem;
     margin-bottom: 20px;
 }
 
-.col .content .box:hover {
-    box-shadow: 0px 3px 12px 0px darkgoldenrod;
-    border: 5px solid transparent;
+/* Main Layout */
+.education-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.col .content .box::before {
-    content: '';
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    right: calc(100% + 22px);
-    top: 0;
-    background-color: darkgoldenrod;
-    border: 2px solid white;
+.col {
+    flex: 1;
+    min-width: 250px; /* Reduced minimum width */
+    margin: 10px;
 }
 
-/* Media Queries */
+/* Box Styles */
+.box {
+    background-color: #222; /* Box background */
+    border-radius: 10px;
+    padding: 10px; /* Reduced padding */
+    transition: transform 0.3s;
+    text-align: center; /* Center text within boxes */
+    margin-bottom: 20px; /* Gap between boxes */
+}
+
+.box img {
+    width: 200px; /* Reduced width */
+    height: 200px; /* Reduced height */
+    border-radius: 5px;
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+
+.box p {
+    line-height: 1.3; /* Reduced line height */
+    font-size: 0.9rem; /* Smaller font size */
+}
+
+/* Hover Effect */
+.box:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Styles */
 @media (min-width: 1440px) {
-    main.education-row {
-        grid-template-columns: repeat(2, 1fr); /* Two columns for larger screens */
-        grid-column-gap: 20px; /* Increased gap between columns */
-    }
-
-    .box {
-        padding: 20px; /* Increased padding for a more spacious feel */
-    }
-
-    .box img {
-        width: 180px; /* Increased image size */
-        height: 120px; /* Increased height for better proportion */
-    }
-
-    .box p {
-        font-size: 18px; /* Larger text for readability */
-    }
-
-    .col header.title {
-        font-size: 36px; /* Larger header size */
-        margin-bottom: 20px; /* Space below header */
-    }
+    .col { flex: 1; } /* Default for larger screens */
 }
 
-/* For screens larger than 1440px */
-@media (min-width: 1441px) {
-    .edu-body {
-        width: 100%;
-        min-height: 100vh; /* Full viewport height */
-        display: flex;
-        justify-content: center; /* Centers horizontally */
-        align-items: center;     /* Centers vertically */
-        padding: 10px;           /* Optional: padding for some space around the content */
-        box-sizing: border-box;
-    }
+@media (max-width: 1440px) and (min-width: 1024px) {
+    .col { flex: 0 0 48%; } /* Two columns */
+}
 
-    .container {
-        padding: 20px 10%; /* More padding for a spacious look */
-    }
+@media (max-width: 1024px) {
+    .col { flex: 0 0 100%; } /* Single column */
+}
 
-    main.education-row {
-        grid-template-columns: repeat(3, 1fr); /* Three columns for even larger screens */
-    }
+@media (max-width: 768px) {
+    header h2 { font-size: 2rem; } /* Smaller heading */
+}
 
-    .box {
-        padding: 30px; /* More padding for each box */
-    }
+@media (max-width: 425px) {
+    .box { padding: 8px; } /* Further reduced padding */
+}
 
-    .box img {
-        width: 200px; /* Further increase image size */
-        height: 140px; /* Adjust height for proportion */
-    }
-
-    .box p {
-        font-size: 20px; /* Even larger text for better readability */
-    }
-
-    .col header.title {
-        font-size: 48px; /* Significantly larger header size */
-        margin-bottom: 30px; /* More space below header */
-    }
+@media (max-width: 375px) {
+    header h2 { font-size: 1.5rem; } /* Further reduced heading */
 }
 
 /* Base Styles */
 .projects {
-    height: 685px;
-    background: linear-gradient(135deg, #000000, #444444, #d4af37);
-
-    color: #333;
-    padding: 20px;
+    height: auto; /* Adjust height based on content */
+    background: linear-gradient(135deg, #1a1a1a, #333333, #d4af37); /* Dark gradient */
+    color: #fff;
+    padding: 20px; /* General padding */
 }
 
 header {
     text-align: center;
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 h1 {
-    font-size: 36px;
-    color: darkgoldenrod;
+    font-size: 36px; /* Default heading size */
+    color: #d4af37; /* Gold color */
 }
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(800px, 3fr));
-    gap: 20px;
+    grid-template-columns: 1fr; /* One project per row for all screen sizes */
+    gap: 20px; /* Gap between boxes */
 }
 
 .project-card {
-    background-color: #fff;
+    border: 2px solid goldenrod;
+    background-color: #444444;/* White background for cards */
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 15px; /* Padding inside cards */
     text-align: center;
     position: relative;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
 }
 
 h2 {
-    font-size: 24px;
+    font-size: 24px; /* Default title size */
     margin-bottom: 10px;
-    color: darkgoldenrod;
+    color: #d4af37; /* Gold for card titles */
 }
 
 p {
-    font-size: 16px;
+    font-size: 16px; /* Default paragraph size */
     margin-bottom: 15px;
 }
 
 a {
-    color: darkgoldenrod;
+    color: #d4af37; /* Gold for links */
     text-decoration: none;
     font-weight: bold;
 }
 
 a:hover {
-    color: darkgoldenrod;
+    color: #fff; /* White on hover */
 }
 
 .like-btn {
@@ -1015,36 +1091,26 @@ a:hover {
 }
 
 .like-btn.liked {
-    color: darkgoldenrod;
+    color: #d4af37; /* Gold when liked */
 }
 
-/* Media Queries for 1440px and above */
+/* Media Queries */
 @media (min-width: 1440px) {
     .projects {
-        height: auto; /* Let the height adjust to the content */
-        padding: 40px; /* Add more padding for larger screens */
-        background: linear-gradient(135deg, #1a1a1a, #333333, #b89b30);
-
+        padding: 40px; /* More padding for larger screens */
     }
 
     h1 {
-        font-size: 48px; /* Increase font size for larger screens */
+        font-size: 48px; /* Larger font size for heading */
         margin-bottom: 20px;
-    }
-
-    .project-grid {
-        grid-template-columns: repeat(3, 1fr); /* Three columns on larger screens */
-        gap: 40px; /* Increase gap between the cards */
     }
 
     .project-card {
         padding: 20px; /* Increase padding inside cards */
-        border-radius: 16px; /* Slightly larger border-radius for a softer look */
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Increase shadow for more depth */
     }
 
     h2 {
-        font-size: 28px; /* Increase the title size inside the project cards */
+        font-size: 28px; /* Increase title size */
     }
 
     p {
@@ -1052,7 +1118,7 @@ a:hover {
     }
 
     a {
-        font-size: 18px; /* Slightly larger link text */
+        font-size: 18px; /* Larger link text */
     }
 
     .like-btn {
@@ -1060,15 +1126,96 @@ a:hover {
     }
 }
 
+@media (max-width: 1439px) and (min-width: 1024px) {
+    .projects {
+        padding: 30px; /* Adjust padding */
+    }
+
+    h1 {
+        font-size: 42px; /* Adjust heading size */
+    }
+
+    .project-card {
+        padding: 20px; /* Increase padding inside cards */
+    }
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+    .projects {
+        padding: 25px; /* Adjust padding */
+    }
+
+    h1 {
+        font-size: 38px; /* Adjust heading size */
+    }
+
+    .project-card {
+        padding: 15px; /* Adjust padding inside cards */
+    }
+}
+
+@media (max-width: 767px) and (min-width: 425px) {
+    .projects {
+        padding: 20px; /* Adjust padding */
+    }
+
+    h1 {
+        font-size: 32px; /* Adjust heading size */
+    }
+
+    .project-card {
+        padding: 15px; /* Adjust padding inside cards */
+    }
+}
+
+@media (max-width: 424px) and (min-width: 375px) {
+    .projects {
+        padding: 15px; /* Adjust padding */
+    }
+
+    h1 {
+        font-size: 28px; /* Adjust heading size */
+    }
+
+    .project-card {
+        padding: 12px; /* Adjust padding inside cards */
+    }
+}
+
+@media (max-width: 374px) and (min-width: 320px) {
+    .projects {
+        padding: 10px; /* Adjust padding */
+    }
+
+    h1 {
+        font-size: 24px; /* Adjust heading size */
+    }
+
+    .project-card {
+        padding: 10px; /* Adjust padding inside cards */
+    }
+}
+
+@media (max-width: 319px) {
+    .projects {
+        padding: 5px; /* Adjust padding */
+    }
+
+    h1 {
+        font-size: 20px; /* Adjust heading size */
+    }
+
+    .project-card {
+        padding: 8px; /* Adjust padding inside cards */
+    }
+}
+
 
 /* Base Styles */
 .assignments {
     background: linear-gradient(135deg, #1C1C1C, #333333);
-
-
     padding: 20px;
     width: 100%; /* Full width for responsiveness */
-    //max-width: 1200px; /* Limit the maximum width */
     margin: 0 auto; /* Center the assignments section */
     display: flex; /* Use flexbox for centering */
     flex-direction: column; /* Stack children vertically */
@@ -1082,6 +1229,7 @@ a:hover {
     justify-items: center; /* Center items in the grid */
 }
 
+/* Card styles */
 .assignment-card {
     height: 200px; /* Fixed height for uniformity */
     width: 300px; /* Fixed width for consistency */
@@ -1093,6 +1241,13 @@ a:hover {
     justify-content: center; /* Center content vertically */
     align-items: center; /* Center content horizontally */
     text-align: center; /* Center text */
+    background-color: #444444; /* Dark background for cards */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition effects */
+}
+
+.assignment-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
 }
 
 .showcase-toggle {
@@ -1169,23 +1324,10 @@ a:hover {
     margin-bottom: 20px;
 }
 
-@media (max-width: 1440px) {
-    .assignment-grid {
-        grid-template-columns: repeat(3, 1fr); /* Three columns for screens below 1440px */
-        gap: 20px; /* Set a suitable gap for spacing */
-    }
-}
-
-/* Media Queries for 1440px and above */
+/* Media Queries for responsive design */
 @media (min-width: 1440px) {
     .assignment-grid {
         grid-template-columns: repeat(4, 1fr); /* Four columns for screens 1440px and above */
-        gap: 30px; /* Increased gap for better spacing */
-    }
-
-
-    .assignment-grid {
-        grid-template-columns: repeat(4, 1fr); /* Four columns on larger screens */
         gap: 30px; /* Increased gap for better spacing */
     }
 
@@ -1213,7 +1355,59 @@ a:hover {
     }
 }
 
+@media (min-width: 1024px) and (max-width: 1439px) {
+    .assignment-grid {
+        grid-template-columns: repeat(3, 1fr); /* Three columns for screens 1024px to 1440px */
+        gap: 20px; /* Set a suitable gap for spacing */
+    }
+}
 
+@media (min-width: 768px) and (max-width: 1023px) {
+    .assignment-grid {
+        grid-template-columns: repeat(3, 1fr); /* Three columns for screens 768px to 1023px */
+        gap: 20px; /* Set a suitable gap for spacing */
+    }
+
+    .assignment-card {
+        height: 220px; /* Adjust height for these screens */
+    }
+}
+
+@media (max-width: 767px) {
+    .assignment-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for extra small screens */
+        gap: 15px; /* Adjusted gap for smaller screens */
+    }
+
+    .assignment-card {
+        height: 200px; /* Maintain height */
+    }
+}
+
+@media (max-width: 424px) {
+    .assignment-grid {
+        grid-template-columns: 1fr; /* Single column for extra small screens */
+    }
+
+    .assignment-card {
+        height: auto; /* Let height adjust to content */
+        padding: 15px; /* Adjust padding */
+    }
+}
+
+@media (max-width: 375px) {
+    .assi-title {
+        font-size: 24px; /* Smaller title for smaller screens */
+        height: 80px; /* Adjust height for smaller title */
+    }
+}
+
+@media (max-width: 320px) {
+    .assignment-card {
+        width: 100%; /* Full width on the smallest screens */
+        padding: 10px; /* Less padding for smaller screens */
+    }
+}
 .gallery-page {
     margin: 0;
     padding: 50px;
@@ -1228,8 +1422,7 @@ a:hover {
     animation: galleryColorChange 2s ease infinite;
 }
 
-
-.gallery-page h1{
+.gallery-page h1 {
     color: white;
 }
 
@@ -1278,13 +1471,87 @@ a:hover {
     border-radius: 10px;
     object-fit: cover;
     transition: 2s;
-
-    display: block; /
+    display: block; /* Fix the display property */
 }
 
 .slider span:hover img {
     transform: translateY(-50px) scale(1.2);
 }
+
+/* Media Queries */
+
+/* For screens 1440px and above */
+@media (min-width: 1440px) {
+    .gallery-page {
+        padding: 70px; /* Increase padding for larger screens */
+    }
+
+    .slider {
+        width: 300px; /* Increase slider size */
+        height: 300px; /* Increase slider size */
+    }
+}
+
+/* For screens between 1024px and 1440px */
+@media (min-width: 1024px) and (max-width: 1440px) {
+    .gallery-page {
+        padding: 60px; /* Adjust padding */
+    }
+
+    .slider {
+        width: 250px; /* Adjust slider size */
+        height: 250px; /* Adjust slider size */
+    }
+}
+
+/* For screens between 768px and 1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .gallery-page {
+        padding: 50px; /* Adjust padding */
+    }
+
+    .slider {
+        width: 220px; /* Adjust slider size */
+        height: 220px; /* Adjust slider size */
+    }
+}
+
+/* For screens between 425px and 767px */
+@media (min-width: 425px) and (max-width: 767px) {
+    .gallery-page {
+        padding: 40px; /* Adjust padding */
+    }
+
+    .slider {
+        width: 200px; /* Adjust slider size */
+        height: 200px; /* Adjust slider size */
+    }
+}
+
+/* For screens between 375px and 424px */
+@media (min-width: 375px) and (max-width: 424px) {
+    .gallery-page {
+        padding: 30px; /* Adjust padding */
+    }
+
+    .slider {
+        width: 180px; /* Adjust slider size */
+        height: 180px; /* Adjust slider size */
+    }
+}
+
+/* For screens between 320px and 374px */
+@media (max-width: 374px) {
+    .gallery-page {
+        padding: 20px; /* Adjust padding */
+    }
+
+    .slider {
+        width: 150px; /* Adjust slider size */
+        height: 150px; /* Adjust slider size */
+    }
+}
+
 /* .contact{*/
 /*height: 1000px;*/
 /*     padding: 0;*/

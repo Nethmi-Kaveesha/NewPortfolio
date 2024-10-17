@@ -17,27 +17,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-<div class="parallax">
-<div class="parallax-content">
-    <h1>Nethmi Kaveesha Fernando</h1>
-    <p>Welcome to my creative portfolio!</p>
-</div>
-</div>
 <nav class="navbar">
-    <ul>
+    <div class="logo">My Portfolio</div>
+    <ul class="nav-links">
         <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
         <li><a href="#about"><i class="fas fa-user"></i> About Me</a></li>
-        <li>
-            <a href="#projects"><i class="fas fa-briefcase"></i> Projects</a>
-            <ul class="dropdown">
-                <li><a href="#project1">Project 1</a></li>
-                <li><a href="#project2">Project 2</a></li>
-            </ul>
-        </li>
+        <li><a href="#skills"><i class="fas fa-star"></i> Skills</a></li>
+        <li><a href="#projects"><i class="fas fa-folder"></i> Projects</a></li>
+        <li><a href="#assignments"><i class="fas fa-book"></i> Assignments</a></li>
         <li><a href="#gallery"><i class="fas fa-images"></i> Gallery</a></li>
         <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
     </ul>
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
 </nav>
+
+<div class="parallax">
+    <div class="parallax-content">
+        <h1>Nethmi Kaveesha Fernando</h1>
+        <p>Welcome to my creative portfolio!</p>
+    </div>
+</div>
+
 <section class="home">
         <div class="background-animation">
             <div class="circle circle1"></div>
@@ -170,7 +174,7 @@
 <div class="edu-body">
 <div class="container">
     <header>
-        <h2>EDUCATION</h2>
+        <h1>Education</h1>
     </header>
 <main class="education-row">
     <section class="col">
@@ -639,7 +643,7 @@
         <div class="footer-row">
             <!-- Footer Column 1 -->
             <div class="footer-col">
-                <h3>About Us</h3>
+                <h3>About Me</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.</p>
                 <ul>
                     <li><i class="fas fa-map-marker-alt"></i> Address</li>
@@ -769,6 +773,13 @@
                 behavior: 'smooth'
             });
         });
+    });
+
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
     });
 </script>
 </body>
