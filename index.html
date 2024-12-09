@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
 
     <meta charset="UTF-8">
     <title>My-Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -14,35 +17,49 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fascinate+Inline&family=Jacques+Francois+Shadow&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 <body>
-<nav class="navbar">
-    <div class="logo">My Portfolio</div>
-    <ul class="nav-links">
-        <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
-        <li><a href="#about"><i class="fas fa-user"></i> About Me</a></li>
-        <li><a href="#skills"><i class="fas fa-star"></i> Skills</a></li>
-        <li><a href="#projects"><i class="fas fa-folder"></i> Projects</a></li>
-        <li><a href="#assignments"><i class="fas fa-book"></i> Assignments</a></li>
-        <li><a href="#gallery"><i class="fas fa-images"></i> Gallery</a></li>
-        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-    </ul>
+<header class="navbar">
+    <header class="portfolio-logo">
+        <div class="logo">
+            <span class="initials">NK</span>
+            <div class="name-titles">
+                <h1>Nethmi Kaveesha</h1>
+                <p>Web Developer | Designer</p>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-link"><i class="fas fa-home"></i>Home</a></li>
+            <li><a href="#about" class="nav-link"><i class="fas fa-user"></i>About Me</a></li>
+            <li><a href="#skills" class="nav-link"><i class="fas fa-cogs"></i>Skills</a></li>
+            <li><a href="#education" class="nav-link"><i class="fas fa-graduation-cap"></i>Education</a></li>
+            <li><a href="#projects" class="nav-link"><i class="fas fa-briefcase"></i>Projects</a></li>
+            <li><a href="#assignments" class="nav-link"><i class="fas fa-tasks"></i>Assignments</a></li>
+            <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i>Contact Me</a></li>
+        </ul>
+    </nav>
     <div class="hamburger">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
-</nav>
+</header>
 
-<div class="parallax">
+
+<div class="parallax" >
     <div class="parallax-content">
-        <h1>Nethmi Kaveesha Fernando</h1>
-        <p>Welcome to my creative portfolio!</p>
+
+        <h1 class="animate__animated animate__fadeIn animate__zoomIn">Nethmi Kaveesha Fernando</h1>
+
+        <p class="animate__animated animate__fadeIn animate__delay-1s">Welcome to my creative portfolio!</p>
     </div>
+
 </div>
 
-<section class="home">
+<section class="home" id="home">
         <div class="background-animation">
             <div class="circle circle1"></div>
             <div class="circle circle2"></div>
@@ -53,6 +70,9 @@
         <div class="text-section">
             <h1 class="hello"><i class="fas fa-hand-wave"></i> Hello!</h1>
             <h2 class="name">Kaveesha Fernando</h2>
+            <div class="typing">
+            <p class="text-1">web Developer</p>
+            </div>
             <p class="description">This is my official portfolio website to show all details and work experience in web development.</p>
             <div class="social-links">
                 <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
@@ -70,7 +90,7 @@
 
 
 
-<div class="about-me-page">
+<div class="about-me-page" id = "about">
 <div class="about-me">
 <div class="about-container">
     <div class="about-contents">
@@ -99,7 +119,7 @@
             <button>Download CV</button>
         </div>
     </section>
-<section class="skillSection">
+<section class="skillSection" id="skills">
         <div class="skills">
             <div class="subject">Hard Work</div>
             <div class="progress-bar">
@@ -171,7 +191,7 @@
         </div>
     </div>
 </div>
-<div class="edu-body">
+<div class="edu-body" id="education">
 <div class="container">
     <header>
         <h1>Education</h1>
@@ -215,7 +235,7 @@
 </main>
 </div>
 </div>
-<div class="projects">
+<div class="projects" id="projects">
     <header>
         <h1>My Projects</h1>
     </header>
@@ -225,35 +245,43 @@
             <div class="project-card">
                 <h2>Connect 4 Game</h2>
                 <p>A classic Connect 4 game developed with intuitive gameplay and sleek design.</p>
-                <a href="https://github.com/yourusername/connect4game" target="_blank">View on GitHub</a>
+                <a href="https://github.com/Nethmi-Kaveesha/CellCom-Phoneshop.git" target="_blank">View on GitHub</a>
                 <span class="like-btn" onclick="toggleLike(this)">&#9829;</span>
             </div>
 
             <div class="project-card">
                 <h2>JavaFX Phone Shop</h2>
                 <p>An interactive phone shop application built using JavaFX with a smooth UI.</p>
-                <a href="https://github.com/yourusername/javafx-phone-shop" target="_blank">View on GitHub</a>
+                <a href="https://github.com/Nethmi-Kaveesha/CellCom-Phoneshop.git" target="_blank">View on GitHub</a>
                 <span class="like-btn" onclick="toggleLike(this)">&#9829;</span>
             </div>
 
             <div class="project-card">
                 <h2>Layered Architecture Phone Shop</h2>
                 <p>A phone shop project using layered architecture principles for scalable development.</p>
-                <a href="https://github.com/yourusername/layered-architecture-phone-shop" target="_blank">View on GitHub</a>
+                <a href="https://github.com/Nethmi-Kaveesha/CellCom-Layered.git" target="_blank">View on GitHub</a>
                 <span class="like-btn" onclick="toggleLike(this)">&#9829;</span>
             </div>
 
             <div class="project-card">
                 <h2>Make Calculator</h2>
                 <p>A fully functioning calculator app with basic arithmetic features and a clean UI.</p>
-                <a href="https://github.com/yourusername/make-calculator" target="_blank">View on GitHub</a>
+                <a href="https://github.com/Nethmi-Kaveesha/Calculator.git" target="_blank">View on GitHub</a>
+                <span class="like-btn" onclick="toggleLike(this)">&#9829;</span>
+            </div>
+
+            <div class="project-card">
+                <h2>Make To-Do-App</h2>
+                <p>A fully functioning to-do app with task management features and a clean UI.</p>
+
+                <a href="https://github.com/Nethmi-Kaveesha/To-Do-App.git" target="_blank">View on GitHub</a>
                 <span class="like-btn" onclick="toggleLike(this)">&#9829;</span>
             </div>
         </div>
     </main>
 
 </div>
-<div class="assignments">
+<div class="assignments" id="assignments">
     <header class="assi-title">
         <h1>My Assignments</h1>
     </header>
@@ -266,13 +294,14 @@
             <label for="showcase1" class="showcase-btn">Show Case</label>
             <div class="modal">
                 <div class="modal-content">
-                    <h2>Select Projects</h2>
+                    <h2>Select Case</h2>
                     <div class="case-selection">
                         <div class="case-card">
                             <h3>Show Case 1</h3>
-                            <button class="github-btn" onclick="window.open('https://github.com/user/repo1', '_blank')">GitHub Link</button>
+                            <button class="github-btn" onclick="window.open('https://github.com/Nethmi-Kaveesha/Assignment-03-CSS-.git', '_blank')">GitHub Link</button>
                             <button class="view-btn" onclick="window.open('https://yourproject1.com', '_blank')">View Project</button>
                         </div>
+
                         <div class="case-card">
                             <h3>Show Case 2</h3>
                             <button class="github-btn" onclick="window.open('https://github.com/user/repo2', '_blank')">GitHub Link</button>
@@ -306,24 +335,10 @@
                     <div class="case-selection">
                         <div class="case-card">
                             <h3>Show Case 1</h3>
-                            <button class="github-btn" onclick="window.open('https://github.com/user/repo1', '_blank')">GitHub Link</button>
+                            <button class="github-btn" onclick="window.open('https://github.com/Nethmi-Kaveesha/MyPortfolio.git', '_blank')">GitHub Link</button>
                             <button class="view-btn" onclick="window.open('https://yourproject1.com', '_blank')">View Project</button>
                         </div>
-                        <div class="case-card">
-                            <h3>Show Case 2</h3>
-                            <button class="github-btn" onclick="window.open('https://github.com/user/repo2', '_blank')">GitHub Link</button>
-                            <button class="view-btn" onclick="window.open('https://yourproject2.com', '_blank')">View Project</button>
-                        </div>
-                        <div class="case-card">
-                            <h3>Show Case 3</h3>
-                            <button class="github-btn" onclick="window.open('https://github.com/user/repo3', '_blank')">GitHub Link</button>
-                            <button class="view-btn" onclick="window.open('https://yourproject3.com', '_blank')">View Project</button>
-                        </div>
-                        <div class="case-card">
-                            <h3>Show Case 4</h3>
-                            <button class="github-btn" onclick="window.open('https://github.com/user/repo4', '_blank')">GitHub Link</button>
-                            <button class="view-btn" onclick="window.open('https://yourproject4.com', '_blank')">View Project</button>
-                        </div>
+
                     </div>
                     <label for="showcase2" class="close-btn">Close</label>
                 </div>
@@ -338,26 +353,37 @@
             <label for="showcase3" class="showcase-btn">Show Case</label>
             <div class="modal">
                 <div class="modal-content">
-                    <h2>Select Projects</h2>
+                    <h2>Select Case</h2>
                     <div class="case-selection">
                         <div class="case-card">
                             <h3>Show Case 1</h3>
-                            <button class="github-btn" onclick="window.open('https://github.com/user/repo1', '_blank')">GitHub Link</button>
+                            <button class="github-btn" onclick="window.open('https://github.com/Nethmi-Kaveesha/Assignment-03-CSS-.git', '_blank')">GitHub Link</button>
                             <button class="view-btn" onclick="window.open('https://yourproject1.com', '_blank')">View Project</button>
                         </div>
+
                         <div class="case-card">
                             <h3>Show Case 2</h3>
-                            <button class="github-btn" onclick="window.open('https://github.com/user/repo2', '_blank')">GitHub Link</button>
+                            <button class="github-btn" onclick="window.open('https://github.com/Nethmi-Kaveesha/Assignment-03-CSS-.git', '_blank')">GitHub Link</button>
                             <button class="view-btn" onclick="window.open('https://yourproject2.com', '_blank')">View Project</button>
                         </div>
                         <div class="case-card">
                             <h3>Show Case 3</h3>
-                            <button class="github-btn" onclick="window.open('https://github.com/user/repo3', '_blank')">GitHub Link</button>
+                            <button class="github-btn" onclick="window.open('https://github.com/Nethmi-Kaveesha/Assignment-03-CSS-.git', '_blank')">GitHub Link</button>
                             <button class="view-btn" onclick="window.open('https://yourproject3.com', '_blank')">View Project</button>
                         </div>
                         <div class="case-card">
                             <h3>Show Case 4</h3>
-                            <button class="github-btn" onclick="window.open('https://github.com/user/repo4', '_blank')">GitHub Link</button>
+                            <button class="github-btn" onclick="window.open('https://github.com/Nethmi-Kaveesha/Assignment-03-CSS-.git', '_blank')">GitHub Link</button>
+                            <button class="view-btn" onclick="window.open('https://yourproject4.com', '_blank')">View Project</button>
+                        </div>
+                        <div class="case-card">
+                            <h3>Show Case 5</h3>
+                            <button class="github-btn" onclick="window.open('https://github.com/Nethmi-Kaveesha/Assignment-03-CSS-.git', '_blank')">GitHub Link</button>
+                            <button class="view-btn" onclick="window.open('https://yourproject4.com', '_blank')">View Project</button>
+                        </div>
+                        <div class="case-card">
+                            <h3>Show Case 6</h3>
+                            <button class="github-btn" onclick="window.open('https://github.com/Nethmi-Kaveesha/Assignment-03-CSS-.git', '_blank')">GitHub Link</button>
                             <button class="view-btn" onclick="window.open('https://yourproject4.com', '_blank')">View Project</button>
                         </div>
                     </div>
@@ -378,23 +404,33 @@
                     <div class="case-selection">
                         <div class="case-card">
                             <h3>Show Case 1</h3>
-                            <button class="github-btn" onclick="window.open('https://github.com/user/repo1', '_blank')">GitHub Link</button>
+                            <button class="github-btn" onclick="window.open('https://github.com/Nethmi-Kaveesha/Assignments-04-css.git', '_blank')">GitHub Link</button>
                             <button class="view-btn" onclick="window.open('https://yourproject1.com', '_blank')">View Project</button>
                         </div>
                         <div class="case-card">
                             <h3>Show Case 2</h3>
-                            <button class="github-btn" onclick="window.open('https://github.com/user/repo2', '_blank')">GitHub Link</button>
-                            <button class="view-btn" onclick="window.open('https://yourproject2.com', '_blank')">View Project</button>
+                            <button class="github-btn" onclick="window.open('https://github.com/Nethmi-Kaveesha/Assignments-04-css.git', '_blank')">GitHub Link</button>
+                            <button class="view-btn" onclick="window.open('https://yourproject1.com', '_blank')">View Project</button>
                         </div>
                         <div class="case-card">
                             <h3>Show Case 3</h3>
-                            <button class="github-btn" onclick="window.open('https://github.com/user/repo3', '_blank')">GitHub Link</button>
-                            <button class="view-btn" onclick="window.open('https://yourproject3.com', '_blank')">View Project</button>
+                            <button class="github-btn" onclick="window.open('https://github.com/Nethmi-Kaveesha/Assignments-04-css.git', '_blank')">GitHub Link</button>
+                            <button class="view-btn" onclick="window.open('https://yourproject1.com', '_blank')">View Project</button>
                         </div>
                         <div class="case-card">
                             <h3>Show Case 4</h3>
-                            <button class="github-btn" onclick="window.open('https://github.com/user/repo4', '_blank')">GitHub Link</button>
-                            <button class="view-btn" onclick="window.open('https://yourproject4.com', '_blank')">View Project</button>
+                            <button class="github-btn" onclick="window.open('https://github.com/Nethmi-Kaveesha/Assignments-04-css.git', '_blank')">GitHub Link</button>
+                            <button class="view-btn" onclick="window.open('https://yourproject1.com', '_blank')">View Project</button>
+                        </div>
+                        <div class="case-card">
+                            <h3>Show Case 5</h3>
+                            <button class="github-btn" onclick="window.open('https://github.com/Nethmi-Kaveesha/Assignments-04-css.git', '_blank')">GitHub Link</button>
+                            <button class="view-btn" onclick="window.open('https://yourproject1.com', '_blank')">View Project</button>
+                        </div>
+                        <div class="case-card">
+                            <h3>Show Case 6</h3>
+                            <button class="github-btn" onclick="window.open('https://github.com/Nethmi-Kaveesha/Assignments-04-css.git', '_blank')">GitHub Link</button>
+                            <button class="view-btn" onclick="window.open('https://yourproject1.com', '_blank')">View Project</button>
                         </div>
                     </div>
                     <label for="showcase4" class="close-btn">Close</label>
@@ -549,7 +585,7 @@
 </div>
 
 
-<main class="gallery-page">
+<main class="gallery-page" id="gallery">
     <header>
         <h1>My Artistic Gallery</h1>
     </header>
@@ -566,7 +602,7 @@
         </div>
     </div>
 </main>
-<div class="contact-page">
+<div class="contact-page" id="contact">
 <section class="contact">
     <div class="content-contact">
         <h2>Contact Me</h2>
@@ -644,11 +680,13 @@
             <!-- Footer Column 1 -->
             <div class="footer-col">
                 <h3>About Me</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.</p>
+                <p>
+                    I am Nethmi Kaveesha Fernando, a passionate software engineer and web developer with a flair for design. My journey in technology has equipped me with a diverse skill set, including expertise in Java, SQL, HTML, and React. I thrive on creating innovative solutions and continuously improving my craft.
+                </p>
                 <ul>
-                    <li><i class="fas fa-map-marker-alt"></i> Address</li>
-                    <li><i class="fas fa-phone"></i> +123 456 7890</li>
-                    <li><i class="fas fa-envelope"></i> email@example.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i>No.53,Constantine lane,Moratuwa</li>
+                    <li><i class="fas fa-phone"></i>+94788309638</li>
+                    <li><i class="fas fa-envelope"></i>kaveefernando2003@gmail.com</li>
                 </ul>
             </div>
 
@@ -678,7 +716,7 @@
 
     <!-- Footer Bottom -->
     <div class="footer-bottom">
-        <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+        <p>© 2024 Nethmi Kaveesha Fernando. All rights reserved.</p>
     </div>
 </footer>
 
@@ -761,26 +799,46 @@
 <!--</div>-->
 <!--</main>-->
 <!--</div>-->
+<!-- AOS Library -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
 <script>
+    // Initialize AOS
+    AOS.init();
+
+    // Function to toggle 'liked' class for elements
     function toggleLike(element) {
+        console.log("Button clicked:", element); // Debugging log
         element.classList.toggle('liked');
     }
 
-    document.querySelectorAll('.navbar a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+    // Activate the clicked navigation link
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            // Remove 'active' class from all links
+            navLinks.forEach(link => link.classList.remove('active'));
+            // Add 'active' class to the clicked link
+            link.classList.add('active');
         });
     });
 
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
+    // Toggle hamburger menu for mobile view
+    document.querySelector('.hamburger').addEventListener('click', () => {
+        document.querySelector('.nav-links').classList.toggle('active');
+        document.querySelector('.hamburger').classList.toggle('active');
     });
+
+    // Optional interaction for fun!
+    document.querySelector('.logo').addEventListener('click', () => {
+        alert('Hello, this is Nethmi Kaveesha Fernando\'s Portfolio!');
+        document.querySelector('.initials').style.animation = "rotateIn 2s infinite linear";
+    });
+
+</script>
+
+
 </script>
 </body>
 </html>
