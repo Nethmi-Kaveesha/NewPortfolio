@@ -1,3 +1,208 @@
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; /* Adds horizontal padding */
+    height: 70px;
+    background: linear-gradient(45deg, black, darkgoldenrod);
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0; /* Positions navbar at the top */
+    z-index: 1000; /* Ensures navbar is on top of other elements */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.navbar .logo a {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none; /* Removes underline from link */
+}
+
+.nav-links {
+    list-style: none; /* Removes bullet points from the list */
+    display: flex;/* Displays navigation links inline */
+    gap: 20px; /* Adds space between links */
+}
+
+.nav-links li a {
+    text-decoration: none; /* Removes underline from links */
+    color: #f4f4f4;
+    font-size: 1rem;
+    display: flex; /* Makes the links flex containers */
+    align-items: center; /* Vertically centers content inside links */
+    gap: 8px; /* Adds space between the icon and the text */
+    transition: color 0.3s, text-decoration 0.3s; /* Smooth transition for color and text decoration changes */
+}
+
+.nav-links li a i {
+    font-size: 1.2rem;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: gold;
+    text-decoration: underline;
+}
+
+.hamburger {
+    display: none; /* hides the hamburger menu */
+    flex-direction: column; /* Stacks hamburger lines vertically */
+    cursor: pointer;
+    gap: 4px; /* Adds space between the hamburger lines */
+}
+
+.hamburger span {
+    display: block; /* Makes each span block-level */
+    width: 25px;
+    height: 3px;
+    background: white;
+    transition: all 0.3s;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hides the navigation links by default on small screens */
+        flex-direction: column; /* Stacks the links vertically */
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: black;
+        border: 1px solid darkgoldenrod;
+        padding: 10px;
+        border-radius: 5px;
+        z-index: 1000; /* Ensures nav links are on top */
+    }
+
+    .nav-links.active {
+        display: flex; /* Displays the nav links when active */
+    }
+
+    .hamburger {
+        display: flex; /* Displays the hamburger icon on small screens */
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg); /* Transforms the first span when the hamburger is active */
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0; /* Hides the second span when the hamburger is active */
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);/* Transforms the third span when the hamburger is active */
+    }
+}
+
+
+/* Logo Styling */
+.portfolio-logo {
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out; /* Applies fade-in animation */
+}
+
+.logo {
+    display: flex;
+    align-items: center; /* Vertically aligns the logo elements */
+    gap: 15px;
+    justify-content: center;
+    transform: scale(0);  /* Initially scales the logo to 0 */
+    animation: zoomIn 1.2s ease-out forwards; /* Applies zoom-in animation */
+}
+
+.initials {
+    font-size: 3.5rem;
+    font-weight: bold;
+    border-radius: 90%;
+    color: white;
+    background: darkgoldenrod;
+    padding: 20px 25px; /* Adds padding around the initials */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transform: rotate(0deg); /* Initially no rotation */
+    animation: rotateIn 2s infinite linear;
+}
+
+.name-titles h1 {
+    margin: 0; /* Removes default margin */
+    font-size: 1.8rem;
+    color: white;
+    animation: slideIn 1.5s ease-out; /* Slide-in animation */
+}
+
+.name-titles p {
+    margin: 5px 0 0;
+    font-size: 1.2rem;
+    color: grey;
+    font-style: italic;
+    animation: slideIn 1.5s ease-out 0.2s;
+    animation-delay: 0.2s;
+    animation-fill-mode: both;  /* Ensures the animation stays at the end state */
+}
+
+
+.logo:hover .initials {
+    color: darkgoldenrod;
+    background: white;
+    border : 2px solid darkgoldenrod;
+    transform: scale(1.2) rotate(360deg);
+    transition: transform 0.5s ease-in-out, background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.logo:hover p {
+    color: white;
+    text-shadow: 0 0 10px gold;
+}
+
+/* Animations */
+@keyframes fadeIn { /* Defines the fadeIn animation */
+    from {
+        opacity: 0; /* The element starts completely invisible */
+    }
+    to {
+        opacity: 1; /* The element becomes fully visible */
+    }
+}
+
+@keyframes zoomIn { /* Defines the zoomIn animation */
+    from {
+        transform: scale(0); /* The element starts scaled down to 0, effectively invisible */
+    }
+    to {
+        transform: scale(1); /* The element scales to its original size */
+    }
+}
+
+@keyframes rotateIn { /* Defines the rotateIn animation */
+    from {
+        transform: rotate(0deg); /* The element starts at a 0 degree rotation (no rotation) */
+    }
+    to { /* Final state of the animation */
+        transform: rotate(360deg); /* The element rotates a full 360 degrees */
+    }
+}
+
+@keyframes slideIn { /* Defines the slideIn animation */
+    from {
+        opacity: 0; /* The element starts completely invisible */
+        transform: translateX(-20px);  /* The element starts 20px off to the left */
+    }
+    to {
+        opacity: 1; /* The element becomes fully visible */
+        transform: translateX(0);  /* The element slides to its original position */
+    }
+}
+
+.name-titles h1 {
+    background: linear-gradient(45deg,papayawhip,wheat);
+    -webkit-background-clip: text; /* Clips the background to the text (only the text area shows the gradient) */
+    -webkit-text-fill-color: transparent;/* Makes the text color transparent, allowing the gradient to show through the text */
+}
+
+
+/*My-name*/
 .typing{
     display: inline-block;
 }
@@ -892,8 +1097,7 @@ html, body {
 }
 
 .container {
-
-    max-width: 1200px;
+    max-width: 1500px;
     margin: auto;
     padding: 20px;
 }
@@ -931,7 +1135,7 @@ header h2 {
 
 .box img {
     width: 200px;
-    height: 200px;
+    height: 120px;
     border-radius: 5px;
     object-fit: cover;
 }
@@ -2043,209 +2247,5 @@ footer {
     .social-links a {
         font-size: 1.2em;
     }
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    height: 70px;
-    background: linear-gradient(45deg, black, darkgoldenrod);
-    color: white;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.navbar .logo a {
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.nav-links li a {
-    text-decoration: none;
-    color: #f4f4f4;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: color 0.3s, text-decoration 0.3s;
-}
-
-.nav-links li a i {
-    font-size: 1.2rem;
-}
-
-.nav-links li a:hover,
-.nav-links li a.active {
-    color: gold;
-    text-decoration: underline;
-}
-
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 4px;
-}
-
-.hamburger span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background: white;
-    transition: all 0.3s;
-}
-
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        right: 20px;
-        background: black;
-        border: 1px solid darkgoldenrod;
-        padding: 10px;
-        border-radius: 5px;
-        z-index: 1000;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .hamburger {
-        display: flex;
-    }
-
-    .hamburger.active span:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active span:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-}
-
-/* General Reset */
-
-
-/* Logo Styling */
-.portfolio-logo {
-    text-align: center;
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    justify-content: center;
-    transform: scale(0);
-    animation: zoomIn 1.2s ease-out forwards;
-}
-
-.initials {
-    font-size: 3.5rem;
-    font-weight: bold;
-    border-radius: 90%;
-    color: white;
-    background: darkgoldenrod;
-    padding: 20px 25px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    transform: rotate(0deg);
-    animation: rotateIn 2s infinite linear;
-}
-
-.name-titles h1 {
-    margin: 0;
-    font-size: 1.8rem;
-    color: white;
-    animation: slideIn 1.5s ease-out;
-}
-
-.name-titles p {
-    margin: 5px 0 0;
-    font-size: 1.2rem;
-    color: grey;
-    font-style: italic;
-    animation: slideIn 1.5s ease-out 0.2s;
-    animation-delay: 0.2s;
-    animation-fill-mode: both;
-}
-
-/* Hover Effect */
-.logo:hover .initials {
-    color: darkgoldenrod;
-    background: white;
-    border : 2px solid darkgoldenrod;
-    transform: scale(1.2) rotate(360deg);
-    transition: transform 0.5s ease-in-out, background 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-
-.logo:hover p {
-    color: white;
-    text-shadow: 0 0 10px gold;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes zoomIn {
-    from {
-        transform: scale(0);
-    }
-    to {
-        transform: scale(1);
-    }
-}
-
-@keyframes rotateIn {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.name-titles h1 {
-    background: linear-gradient(45deg,papayawhip,wheat);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
